@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?colorMainBlueBg"
+    android:paddingTop="@dimen/dp_20"
+    tools:context="com.watermelonman.weather.ui.fragment.managelocations.view.ManageLocationsFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideStart"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dp_12"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideEnd"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dp_12"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgSelectAll"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd"
+        app:srcCompat="@drawable/ic_round_done_all_24"
+        style="@style/BorderlessClickableBg"
+        app:tint="?colorText"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgCancel"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        app:layout_constraintTop_toTopOf="@id/imgSelectAll"
+        app:layout_constraintStart_toStartOf="@id/guideStart"
+        app:srcCompat="@drawable/ic_round_close_24"
+        style="@style/BorderlessClickableBg"
+        app:tint="?colorText"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupSelectionModeViews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="imgCancel, imgSelectAll, imgDelete"
+        tools:visibility="visible"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtManageLocationsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/imgSelectAll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Text.White.Cabin.18"
+        android:text="@string/manage_locations"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSavedLocations"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        app:layout_constraintTop_toBottomOf="@id/txtManageLocationsLabel"
+        app:layout_constraintBottom_toTopOf="@id/imgDelete"
+        app:layout_constraintStart_toStartOf="@id/guideStart"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd"
+        tools:listitem="@layout/rv_item_saved_location"
+        android:overScrollMode="never"
+        android:layout_marginTop="@dimen/dp_20"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/imgDelete"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd"
+        app:rippleColor="@color/color_white_20"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_28"
+        app:backgroundTint="?colorMainBlueSecondary"
+        android:stateListAnimator="@null"
+        app:elevation="@dimen/dp_0"
+        app:borderWidth="@dimen/dp_0"
+        app:tint="@color/color_light_grey"
+        android:src="@drawable/ic_round_add_24"
+        android:contentDescription="@string/add_location_to_saved_locations" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgDelete"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_delete_outline_24"
+        app:tint="?colorText"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="@dimen/dp_12"
+        android:paddingBottom="@dimen/dp_12"
+        android:background="@drawable/bg_main_blue_secondary_with_ripple"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

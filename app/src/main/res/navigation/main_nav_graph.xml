@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/selectLocationFragment">
+
+    <fragment
+        android:id="@+id/selectLocationFragment"
+        android:name="com.watermelonman.weather.ui.fragment.selectlocation.view.SelectLocationFragment"
+        android:label="fragment_select_location"
+        tools:layout="@layout/fragment_select_location" >
+        <action
+            android:id="@+id/action_selectLocationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="launchMode"
+            app:argType="com.watermelonman.weather.ui.fragment.selectlocation.utils.LaunchMode"
+            android:defaultValue="INITIAL" />
+        <action
+            android:id="@+id/action_selectLocationFragment_to_mapFragment"
+            app:destination="@id/mapFragment"
+            app:enterAnim="@anim/scale_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/scale_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.watermelonman.weather.ui.fragment.home.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_sevenDayForecastBottomSheet"
+            app:destination="@id/sevenDayForecastBottomSheet" />
+        <action
+            android:id="@+id/action_homeFragment_to_manageLocationsBottomSheet"
+            app:destination="@id/manageLocationsFragment"
+            app:enterAnim="@anim/scale_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/scale_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.watermelonman.weather.ui.fragment.map.view.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+
+    <dialog
+        android:id="@+id/sevenDayForecastBottomSheet"
+        android:name="com.watermelonman.weather.ui.fragment.home.dialog.sevenday.view.SevenDayForecastBottomSheet"
+        android:label="bottom_sheet_seven_day_forecast"
+        tools:layout="@layout/bottom_sheet_seven_day_forecast" >
+        <argument
+            android:name="sevenDayForecast"
+            app:argType="com.watermelonman.entities.daily.DailyData[]" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/manageLocationsFragment"
+        android:name="com.watermelonman.weather.ui.fragment.managelocations.view.ManageLocationsFragment"
+        android:label="bottom_sheet_manage_locations"
+        tools:layout="@layout/fragment_manage_locations" >
+        <action
+            android:id="@+id/action_manageLocationsFragment_to_selectLocationFragment"
+            app:destination="@id/selectLocationFragment"
+            app:enterAnim="@anim/scale_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/scale_out" />
+    </fragment>
+
+</navigation>

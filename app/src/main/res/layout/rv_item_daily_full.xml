@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_rect_radius_12_bottom_sheet_blue_with_ripple"
+    android:padding="@dimen/dp_6"
+    tools:background="@color/color_steel_blue">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgIconDaily"
+        app:layout_constraintTop_toTopOf="@id/txtDate"
+        app:layout_constraintBottom_toBottomOf="@id/txtDayAndDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        android:adjustViewBounds="true"
+        android:layout_width="@dimen/dp_38"
+        android:layout_height="@dimen/dp_38" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDate"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgIconDaily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Text.White.Cabin.12"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="5/18"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDayAndDescription"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtDate"
+        app:layout_constraintEnd_toStartOf="@id/txtDayNightTemperature"
+        app:layout_constraintStart_toEndOf="@id/imgIconDaily"
+        android:ellipsize="end"
+        android:maxLines="1"
+        style="@style/Text.White.Cabin.16"
+        tools:text="Day · Description" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDayNightTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/txtDayAndDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Text.White.Cabin.16"
+        tools:text="24°/13°"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtSunrise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        app:layout_constraintStart_toStartOf="@id/txtDayAndDescription"
+        app:layout_constraintTop_toBottomOf="@id/txtDayAndDescription"
+        app:layout_constraintEnd_toStartOf="@id/txtSunset"
+        style="@style/Text.White.Cabin.14"
+        tools:text="sunrise at  ·  07:06"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtSunset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/txtSunrise"
+        app:layout_constraintEnd_toEndOf="@id/txtDayAndDescription"
+        app:layout_constraintStart_toEndOf="@+id/txtSunrise"
+        style="@style/Text.White.Cabin.14"
+        tools:text="sunset at  ·  20:14"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRealFeelLabel"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtSunrise"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginStart="@dimen/dp_6"
+        android:layout_marginEnd="@dimen/dp_6"
+        android:text="@string/real_feel"
+        style="@style/Text.Metropolis"/>
+
+    <View
+        android:id="@+id/vDividerRealFeel"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="@dimen/dp_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtRealFeelLabel"
+        android:background="@color/color_white_20"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRealFeelMornLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/vDividerRealFeel"
+        app:layout_constraintStart_toStartOf="@id/txtRealFeelMorn"
+        app:layout_constraintEnd_toEndOf="@+id/txtRealFeelMorn"
+        android:layout_marginTop="@dimen/dp_2"
+        android:text="@string/morn"
+        style="@style/Text.White.Cabin.12"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRealFeelMorn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtRealFeelMornLabel"
+        app:layout_constraintStart_toStartOf="@id/txtRealFeelLabel"
+        app:layout_constraintEnd_toStartOf="@id/txtRealFeelDay"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        style="@style/Text.White.Cabin.14"
+        tools:text="22.01°C"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRealFeelDayLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/txtRealFeelMornLabel"
+        app:layout_constraintStart_toStartOf="@id/txtRealFeelDay"
+        app:layout_constraintEnd_toEndOf="@id/txtRealFeelDay"
+        android:text="@string/day"
+        style="@style/Text.White.Cabin.12"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRealFeelDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtRealFeelDayLabel"
+        app:layout_constraintStart_toEndOf="@id/txtRealFeelMorn"
+        app:layout_constraintEnd_toStartOf="@id/txtRealFeelEven"
+        style="@style/Text.White.Cabin.14"
+        tools:text="22.01°C"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRealFeelEvenLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/txtRealFeelDayLabel"
+        app:layout_constraintStart_toStartOf="@id/txtRealFeelEven"
+        app:layout_constraintEnd_toEndOf="@id/txtRealFeelEven"
+        android:text="@string/even"
+        style="@style/Text.White.Cabin.12"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRealFeelEven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtRealFeelEvenLabel"
+        app:layout_constraintStart_toEndOf="@id/txtRealFeelDay"
+        app:layout_constraintEnd_toStartOf="@id/txtRealFeelNight"
+        style="@style/Text.White.Cabin.14"
+        tools:text="22.01°C"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRealFeelNightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/txtRealFeelEvenLabel"
+        app:layout_constraintStart_toStartOf="@id/txtRealFeelNight"
+        app:layout_constraintEnd_toEndOf="@id/txtRealFeelNight"
+        android:text="@string/night"
+        style="@style/Text.White.Cabin.12"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRealFeelNight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtRealFeelNightLabel"
+        app:layout_constraintStart_toEndOf="@id/txtRealFeelEven"
+        app:layout_constraintEnd_toEndOf="@id/txtRealFeelLabel"
+        style="@style/Text.White.Cabin.14"
+        tools:text="22.01°C"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_center_vertical"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtUvIndexLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtRealFeelMorn"
+        app:layout_constraintStart_toStartOf="@id/txtRealFeelLabel"
+        android:text="@string/uv_index"
+        style="@style/Text.Metropolis"
+        android:layout_marginTop="@dimen/dp_8"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtUvIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Text.White.Cabin.16"
+        app:layout_constraintStart_toStartOf="@id/txtUvIndexLabel"
+        app:layout_constraintTop_toBottomOf="@id/txtUvIndexLabel"
+        tools:text="5"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtHumidityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Text.Metropolis"
+        app:layout_constraintStart_toStartOf="@id/guide_center_vertical"
+        app:layout_constraintTop_toTopOf="@id/txtUvIndexLabel"
+        android:text="@string/humidity"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtHumidityLabel"
+        app:layout_constraintStart_toStartOf="@id/txtHumidityLabel"
+        style="@style/Text.White.Cabin.16"
+        tools:text="67 %"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtPressureLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Text.Metropolis"
+        app:layout_constraintTop_toBottomOf="@id/txtUvIndex"
+        app:layout_constraintStart_toStartOf="@id/txtUvIndex"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="@string/pressure"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Text.White.Cabin.16"
+        app:layout_constraintTop_toBottomOf="@id/txtPressureLabel"
+        app:layout_constraintStart_toStartOf="@id/txtPressureLabel"
+        tools:text="1024 hPa"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtWindLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/txtPressureLabel"
+        app:layout_constraintStart_toStartOf="@id/guide_center_vertical"
+        style="@style/Text.Metropolis"
+        android:text="@string/wind"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lWind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/txtWindLabel"
+        app:layout_constraintStart_toStartOf="@id/txtWindLabel">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgWindDirection"
+            android:layout_width="@dimen/dp_12"
+            android:layout_height="@dimen/dp_12"
+            app:tint="@color/white"
+            app:srcCompat="@drawable/ic_round_navigation_24"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtWindSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.White.Cabin.16"
+            android:layout_marginStart="@dimen/dp_4"
+            tools:text="1.53 m/s"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupAdditionalInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="txtSunrise, txtSunset, txtRealFeelLabel, vDividerRealFeel, txtRealFeelMornLabel, txtRealFeelMorn, txtRealFeelDayLabel, txtRealFeelDay, txtRealFeelEvenLabel, txtRealFeelEven, txtRealFeelNightLabel, txtRealFeelNight, txtUvIndexLabel, txtUvIndex, txtHumidityLabel, txtHumidity, txtPressureLabel, txtPressure, txtWindLabel, lWind"
+        tools:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Weather" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorMainBlueBg">@color/color_sky_blue</item>
+        <item name="colorLightSecondary">@color/white</item>
+        <item name="colorDarkSecondary">@color/color_dark_grey</item>
+        <item name="colorPrimaryButtonBg">@color/color_white_20</item>
+        <item name="colorPrimaryButtonRipple">@color/color_green_malachite_bright_40</item>
+        <item name="colorText">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorMainBlueBg</item>
+        <!-- Customize your theme here. -->
+        <item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme.RoundedCorners</item>
+        <item name="colorBottomSheetBg">@color/color_steel_blue</item>
+        <item name="colorBottomSheetSecondaryBg">@color/color_steel_blue_secondary</item>
+        <item name="colorDayNightSecondary">@color/color_black_40</item>
+        <item name="colorMainBlueSecondary">@color/color_sky_blue_secondary</item>
+    </style>
+
+    <style name="Theme.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_theme</item>
+        <item name="android:statusBarColor">@color/color_sky_blue</item>
+    </style>
+
+</resources>

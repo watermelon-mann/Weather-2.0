@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:padding="@dimen/dp_8"
+    tools:background="@color/color_sky_blue"
+    android:weightSum="1">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgIconDaily"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDayAndDescription"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        style="@style/Text.White.Cabin.16"
+        tools:text="Day · Description" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDayNightTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Text.White.Cabin.16"
+        tools:text="24°/13°"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

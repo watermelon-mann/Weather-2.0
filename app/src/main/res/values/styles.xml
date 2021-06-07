@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RoundedStrokeBgContainer">
+        <item name="android:background">@drawable/bg_rect_radius_12_white_stroke</item>
+        <item name="android:padding">@dimen/dp_12</item>
+    </style>
+
+    <style name="Text.White.Cabin.10" parent="">
+        <item name="android:fontFamily">@font/cabin</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.White.Cabin.12" parent="">
+        <item name="android:fontFamily">@font/cabin</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.White.Cabin.14" parent="">
+        <item name="android:fontFamily">@font/cabin</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.White.Cabin.16" parent="">
+        <item name="android:fontFamily">@font/cabin</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.White.Cabin.18" parent="">
+        <item name="android:fontFamily">@font/cabin</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.White.Cabin.22" parent="">
+        <item name="android:fontFamily">@font/cabin</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/sp_22</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.White.Metropolis.28" parent="">
+        <item name="android:fontFamily">@font/metropolis_extra_light</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/sp_28</item>
+    </style>
+
+    <style name="Text.White.Metropolis.66" parent="">
+        <item name="android:fontFamily">@font/metropolis_extra_light</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/sp_66</item>
+    </style>
+
+    <style name="Text.Metropolis" parent="">
+        <item name="android:fontFamily">@font/metropolis_extra_light</item>
+    </style>
+
+    <style name="Text.Metropolis.AllCaps">
+        <item name="android:fontFamily">@font/metropolis_extra_light</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="BottomSheetDialogShapeAppearance.RoundedCorners"
+        parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/dp_20</item>
+        <item name="cornerSizeTopRight">@dimen/dp_20</item>
+        <item name="cornerSizeBottomLeft">@dimen/dp_0</item>
+        <item name="cornerSizeBottomRight">@dimen/dp_0</item>
+    </style>
+
+    <style name="BottomSheetDialog.Style.RoundedCorners"
+        parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">@style/BottomSheetDialogShapeAppearance.RoundedCorners</item>
+        <item name="android:backgroundTint">?attr/colorBottomSheetBg</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme.RoundedCorners"
+        parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetDialog.Style.RoundedCorners</item>
+    </style>
+
+    <style name="SearchBarStyle">
+        <item name="android:textColor">?colorText</item>
+        <item name="android:textColorHint">@color/color_white_50</item>
+        <item name="android:background">@drawable/bg_rect_radius_12_light_secondary</item>
+        <item name="android:padding">@dimen/dp_12</item>
+        <item name="android:textCursorDrawable">@drawable/white_cursor</item>
+    </style>
+
+    <style name="CheckBoxStyle" parent="Base.Theme.AppCompat">
+        <item name="colorAccent">@color/color_warm_yellow</item>
+    </style>
+
+    <style name="BorderlessClickableBg">
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="MapOptionsButtonStyle" >
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/bg_rect_radius_4_white_with_ripple</item>
+        <item name="android:padding">@dimen/dp_4</item>
+        <item name="android:tint">@color/color_night_blue</item>
+    </style>
+
+</resources>
