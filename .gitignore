@@ -14,3 +14,6 @@
 .cxx
 local.properties
 native-lib.cpp
+kPathWeather.jks
+private_key.pepk
+/app/release

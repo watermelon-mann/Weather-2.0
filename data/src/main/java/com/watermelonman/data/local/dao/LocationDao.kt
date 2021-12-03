@@ -6,33 +6,34 @@ import com.watermelonman.entities.location.Location
 @Dao
 interface LocationDao {
 
+    //TODO: Find out Y suspend functions cause build error
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(location: Location)
+    fun insert(location: Location)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(locations: List<Location>)
+    fun insertAll(locations: List<Location>)
 
     @Update
-    suspend fun update(location: Location)
+    fun update(location: Location)
 
     @Delete
-    suspend fun delete(location: Location)
+    fun delete(location: Location)
 
     @Delete
-    suspend fun deleteAll(locations: List<Location>)
+    fun deleteAll(locations: List<Location>)
 
     @Query("SELECT * FROM location")
-    suspend fun getAllSavedLocations(): List<Location>
+    fun getAllSavedLocations(): List<Location>
 
     @Query("SELECT * FROM location WHERE isSelected = 1")
-    suspend fun getSelectedLocation(): Location?
+    fun getSelectedLocation(): Location?
 
     @Query("UPDATE Location SET isSelected=:isSelected WHERE geoNameId =:id")
-    suspend fun updateSelectedStatus(isSelected: Int, id: Int)
+    fun updateSelectedStatus(isSelected: Int, id: Int)
 
     @Query("SELECT * FROM location WHERE geoNameId =:id")
-    suspend fun getLocationById(id: Int): Location?
+    fun getLocationById(id: Int): Location?
 
     @Query("UPDATE Location SET name =:name WHERE geoNameId =:id")
-    suspend fun updateLocationName(name: String, id: Int)
+    fun updateLocationName(name: String, id: Int)
 }
