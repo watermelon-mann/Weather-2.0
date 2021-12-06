@@ -157,6 +157,7 @@ class SelectLocationFragment: BaseFragmentMVVM<SelectLocationViewModel, Fragment
     }
 
     private fun selectCity(city: City) {
+        binding.root.hideKeyboard()
         viewModel.selectCity(city)
     }
     

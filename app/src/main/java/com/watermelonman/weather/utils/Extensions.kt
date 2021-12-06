@@ -1,18 +1,16 @@
 package com.watermelonman.weather.utils
 
 import android.app.Dialog
-import android.content.pm.PackageManager
 import android.transition.TransitionManager
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
+import android.view.inputmethod.InputMethodManager
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresPermission
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.snackbar.Snackbar
 import com.watermelonman.entities.result.CallException
@@ -84,6 +82,14 @@ inline fun<reified T> Fragment.collectWhenStarted(flow: Flow<T>, noinline block:
     flow.observeOnLifecycle(viewLifecycleOwner) {
         withContext(Dispatchers.Main) { block(it) }
     }
+}
+
+//-------------------  Context  -------------------
+
+fun View.hideKeyboard() {
+    context ?: return
+    val imm = ContextCompat.getSystemService(context, InputMethodManager::class.java)
+    imm?.hideSoftInputFromWindow(windowToken, 0)
 }
 
 //-------------------  Other  -------------------
