@@ -1,22 +1,22 @@
 ext {
 
-    lifecycle_version = "2.3.1"
+    lifecycle_version = '2.4.0'
     nav_version = "2.3.5"
     coroutines_version = '1.5.0-native-mt'
     room_version = "2.3.0"
-    recycler_view_version = "1.2.0"
+    recycler_view_version = '1.2.1'
 
     location_services_version = "18.0.0"
 
-    koin_version = '3.0.2'
+    koin_version = '3.1.4'
 
     retrofit_version = "2.9.0"
-    logging_interceptor_version = '5.0.0-alpha.2'
-    lottie_version = "3.7.0"
+    logging_interceptor_version = '5.0.0-alpha.3'
+    lottie_version = '4.2.2'
     coil_version = "1.2.1"
     swipe_refresh_layout_version = "1.1.0"
-    maps_version = "17.0.1"
-    places_version = "2.4.0"
+    maps_version = '18.0.0'
+    places_version = '2.5.0'
 
     arch = [
             lifecycle               :   "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
