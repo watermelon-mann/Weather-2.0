@@ -11,12 +11,14 @@ android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
+    def version = getGitVersionCode()
+
     defaultConfig {
         applicationId "com.watermelonman.weather"
         minSdkVersion 22
         targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+        versionCode version
+        versionName "1.${version}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

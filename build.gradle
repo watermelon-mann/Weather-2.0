@@ -27,3 +27,19 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext.getGitVersionCode = { ->
+    try {
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine 'git', 'rev-list',  '--count', 'HEAD'
+            standardOutput = stdout
+        }
+
+        return Integer.parseInt(stdout.toString().trim())
+    }
+    catch (Exception e) {
+        println e
+        return -1
+    }
+}
