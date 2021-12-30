@@ -29,38 +29,57 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/vLoading"
-        android:layout_width="@dimen/dp_32"
-        android:layout_height="@dimen/dp_32"
-        app:layout_constraintTop_toBottomOf="@+id/cardSearchBar"
-        app:layout_constraintEnd_toStartOf="@id/imgDone"
-        android:layout_margin="@dimen/dp_12"
-        android:visibility="gone"
-        app:lottie_rawRes="@raw/loading_circles_lottie"
-        app:lottie_autoPlay="true"
-        app:lottie_repeatMode="restart"
-        app:lottie_loop="true"
-        tools:visibility="visible"/>
+<!--    <com.airbnb.lottie.LottieAnimationView-->
+<!--        android:id="@+id/vLoading"-->
+<!--        android:layout_width="@dimen/dp_32"-->
+<!--        android:layout_height="@dimen/dp_32"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/cardSearchBar"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/imgDone"-->
+<!--        android:layout_margin="@dimen/dp_12"-->
+<!--        android:visibility="gone"-->
+<!--        app:lottie_rawRes="@raw/loading_circles_lottie"-->
+<!--        app:lottie_autoPlay="true"-->
+<!--        app:lottie_repeatMode="restart"-->
+<!--        app:lottie_loop="true"-->
+<!--        tools:visibility="visible"/>-->
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgDone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_round_done_24"
-        app:layout_constraintTop_toBottomOf="@+id/cardSearchBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/dp_12"
-        style="@style/MapOptionsButtonStyle"/>
+<!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/imgDone"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:srcCompat="@drawable/ic_round_done_24"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/cardSearchBar"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_margin="@dimen/dp_12"-->
+<!--        style="@style/MapOptionsButtonStyle"/>-->
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgLocateUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_round_my_location_24"
-        app:layout_constraintTop_toBottomOf="@+id/imgDone"
+<!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/imgLocateUser"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:srcCompat="@drawable/ic_round_my_location_24"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imgDone"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_margin="@dimen/dp_12"-->
+<!--        style="@style/MapOptionsButtonStyle"/>-->
+
+    <com.watermelonman.weather.ui.custom.buttonwithloading.ButtonWithLoadingView
+        android:id="@+id/btnLocateUser"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        app:layout_constraintEnd_toEndOf="@+id/btnDone"
+        app:layout_constraintBottom_toTopOf="@id/btnDone"
+        app:bwl_icon="@drawable/ic_round_my_location_24"
+        android:layout_marginBottom="@dimen/dp_12"/>
+
+    <com.watermelonman.weather.ui.custom.buttonwithloading.ButtonWithLoadingView
+        android:id="@+id/btnDone"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/dp_12"
-        style="@style/MapOptionsButtonStyle"/>
+        app:bwl_icon="@drawable/ic_round_done_24"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_48"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

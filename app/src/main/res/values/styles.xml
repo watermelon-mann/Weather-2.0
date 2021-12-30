@@ -115,4 +115,9 @@
         <item name="android:tint">@color/color_night_blue</item>
     </style>
 
+    <style name="ButtonWithLoadingStyle">
+        <item name="android:background">@drawable/bg_circle_main_blue</item>
+        <item name="android:elevation">@dimen/dp_4</item>
+    </style>
+
 </resources>

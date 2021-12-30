@@ -52,10 +52,10 @@ class MapFragment: BaseFragmentMVVM<MapViewModel, FragmentMapBinding>() {
             placesClient = Places.createClient(requireContext())
         }
         with(binding) {
-            imgDone.setOnClickListener {
+            btnDone.setOnClickListener {
                 viewModel.selectMarkedLocation()
             }
-            imgLocateUser.setOnClickListener {
+            btnLocateUser.setOnClickListener {
                 snackBar?.dismiss()
                 locateUser()
             }
@@ -95,7 +95,7 @@ class MapFragment: BaseFragmentMVVM<MapViewModel, FragmentMapBinding>() {
             if (isGranted) {
                 viewModel.locateUser()
             }else {
-                binding.vLoading.fadeOutIfVisible()
+                binding.btnLocateUser.showProgress(false)
                 val shouldShowPermissionRequiredDialog = !ActivityCompat
                     .shouldShowRequestPermissionRationale(requireActivity(),
                         Manifest.permission.ACCESS_FINE_LOCATION)
@@ -155,11 +155,7 @@ class MapFragment: BaseFragmentMVVM<MapViewModel, FragmentMapBinding>() {
     }
 
     private fun shouldShowLoading(shouldShow: Boolean) {
-        if (shouldShow) {
-            binding.vLoading.fadeInIfInGone()
-        } else {
-            binding.vLoading.fadeOutIfVisible()
-        }
+        binding.btnLocateUser.showProgress(shouldShow)
     }
 
     private fun showPermissionIsRequiredDialog() {

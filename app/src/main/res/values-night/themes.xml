@@ -23,6 +23,8 @@
         <item name="colorBottomSheetSecondaryBg">@color/color_night_blue</item>
         <item name="colorDayNightSecondary">@color/color_white_70</item>
         <item name="colorMainBlueSecondary">@color/color_night_blue_secondary</item>
+
+        <item name="buttonWithLoadingStyle">@style/ButtonWithLoadingStyle</item>
     </style>
 
     <style name="Theme.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">

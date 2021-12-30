@@ -2,12 +2,18 @@
 <resources>
     <attr name="colorMainBlueBg" format="color" />
     <attr name="colorMainBlueSecondary" format="color" />
-    <attr name="colorLightSecondary" format="color"/>
-    <attr name="colorDarkSecondary" format="color"/>
-    <attr name="colorPrimaryButtonBg" format="color"/>
-    <attr name="colorPrimaryButtonRipple" format="color"/>
-    <attr name="colorText" format="color"/>
-    <attr name="colorBottomSheetBg" format="color"/>
-    <attr name="colorBottomSheetSecondaryBg" format="color"/>
-    <attr name="colorDayNightSecondary" format="color"/>
+    <attr name="colorLightSecondary" format="color" />
+    <attr name="colorDarkSecondary" format="color" />
+    <attr name="colorPrimaryButtonBg" format="color" />
+    <attr name="colorPrimaryButtonRipple" format="color" />
+    <attr name="colorText" format="color" />
+    <attr name="colorBottomSheetBg" format="color" />
+    <attr name="colorBottomSheetSecondaryBg" format="color" />
+    <attr name="colorDayNightSecondary" format="color" />\
+
+    <attr name="buttonWithLoadingStyle" format="reference"/>
+
+    <declare-styleable name="ButtonWithLoadingView">
+        <attr name="bwl_icon" format="reference" />
+    </declare-styleable>
 </resources>
