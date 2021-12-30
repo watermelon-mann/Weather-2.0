@@ -14,7 +14,7 @@ import org.koin.dsl.module
 val viewModelModule = module {
     viewModel { MainActivityViewModel(get()) }
     viewModel { HomeViewModel(get()) }
-    viewModel { MapViewModel(androidApplication(), get(), get()) }
+    viewModel { MapViewModel(androidApplication(), get(), get(), get()) }
     viewModel { SelectLocationViewModel(get(), get(), get(), get()) }
     viewModel { SevenDayForecastViewModel() }
     viewModel { ManageLocationsViewModel(get(), get()) }

@@ -11,6 +11,8 @@ import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.snackbar.Snackbar
 import com.watermelonman.entities.result.CallException
@@ -83,6 +85,19 @@ inline fun<reified T> Fragment.collectWhenStarted(flow: Flow<T>, noinline block:
         withContext(Dispatchers.Main) { block(it) }
     }
 }
+
+fun Fragment.isFragmentInBackStack(destinationId: Int) =
+    findNavController().isFragmentInBackStack(destinationId)
+
+//-------------------  NavController  -------------------
+
+fun NavController.isFragmentInBackStack(destinationId: Int) =
+    try {
+        getBackStackEntry(destinationId)
+        true
+    } catch (e: Exception) {
+        false
+    }
 
 //-------------------  Context  -------------------
 

@@ -11,14 +11,17 @@ import com.google.android.gms.maps.MapsInitializer
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.libraries.places.api.Places
 import com.watermelonman.domain.interactor.CurrentLocationInteractor
+import com.watermelonman.domain.interactor.PreferencesInteractor
 import com.watermelonman.domain.interactor.SavedLocationsInteractor
 import com.watermelonman.domain.utils.locationservices.LocationRequester
+import com.watermelonman.entities.enums.StartDestinations
 import com.watermelonman.entities.result.ErrorCode
 import com.watermelonman.entities.result.State
 import com.watermelonman.entities.utils.latLngLocation
 import com.watermelonman.weather.BuildConfig
 import com.watermelonman.weather.R
 import com.watermelonman.weather.appbase.BaseViewModel
+import com.watermelonman.weather.ui.fragment.map.view.MapFragmentDirections
 import com.watermelonman.weather.utils.navigation.Command
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
@@ -30,7 +33,8 @@ import kotlinx.coroutines.launch
 class MapViewModel(
     application: Application,
     private val currentLocationInteractor: CurrentLocationInteractor,
-    private val savedLocationsInteractor: SavedLocationsInteractor
+    private val savedLocationsInteractor: SavedLocationsInteractor,
+    private val preferencesInteractor: PreferencesInteractor
 ): BaseViewModel() {
 
     init {
@@ -111,6 +115,12 @@ class MapViewModel(
         sendCommand(Command.NavigateUpCommand(R.id.manageLocationsFragment))
     }
 
+    fun goToHomePage() {
+        changeStartDestinationToHomeFragment()
+        val action = MapFragmentDirections.actionMapFragmentToHomeFragment()
+        sendCommand(Command.NavCommand(action))
+    }
+
     fun showPermissionIsRequiredDialog() {
         viewModelScope.launch(Dispatchers.IO) {
             _actionShowPermissionRequiredDialog.send(true)
@@ -125,5 +135,9 @@ class MapViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             _actionOpenAppSettings.send(intent)
         }
+    }
+
+    private fun changeStartDestinationToHomeFragment() {
+        preferencesInteractor.setStartDestination(StartDestinations.HOME)
     }
 }

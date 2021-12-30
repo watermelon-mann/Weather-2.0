@@ -64,7 +64,11 @@ class MapFragment: BaseFragmentMVVM<MapViewModel, FragmentMapBinding>() {
 
     override fun observes() {
         collectWhenStarted(viewModel.onDone) {
-            viewModel.navigateUpToManageLocations()
+            if (isFragmentInBackStack(R.id.manageLocationsFragment)) {
+                viewModel.navigateUpToManageLocations()
+            } else {
+                viewModel.goToHomePage()
+            }
             selectedLocationViewModel.notifyOnSuccessObservers()
         }
         collectWhenStarted(viewModel.userLocationLoading, ::shouldShowLoading)
